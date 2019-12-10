@@ -6,11 +6,21 @@ This repo is to quickly spin up your local development setup in a few simple com
 - https://github.com/MerrillCorporation/config-server
 - https://github.com/MerrillCorporation/javelin-configurations
 
-## How to run 
+## Perequisites 
 
-1. Install Docker
-2. Setup ssh keys with github
-3. Copy `id_rsa` file to this repo
-  - Mac `cp ~/.ssh/id_rsa`
-  - Windows 
-4. Run `docker-compose up -d`
+1. Install Docker (https://docs.docker.com/install/)
+2. Setup ssh keys with github (https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+
+## Run Containers
+1. Copy `id_rsa` file to this repo
+    - Mac `cp ~/.ssh/id_rsa`
+    - Windows 
+2. Run `docker-compose up -d`
+
+## Notes
+
+### Cutover 
+
+During cutover `config-server.Dockerfile` will need to be changed if changes haven't been pushed. 
+
+`ENV TARGET_DOMAIN="apps.us2.devb.foundry.mrll.com"`
