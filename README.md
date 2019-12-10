@@ -12,7 +12,7 @@ This repo is to quickly spin up your local development setup in a few simple com
 2. Setup ssh keys with github (https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
 
 ## Run Containers
-1. Copy `id_rsa` file to this repo
+1. Copy `id_rsa` file to directory
     - Mac `cp ~/.ssh/id_rsa`
     - Windows 
 2. Run `docker-compose up -d`
