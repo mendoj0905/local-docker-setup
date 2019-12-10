@@ -1,0 +1,26 @@
+version: '3.4'
+services: 
+  gateway:
+    container_name: local-gateway-app
+    build: 
+      context: .
+      dockerfile: ./Dockerfiles/local-gateway.Dockerfile
+    ports: 
+      - 80:80
+      - 8085:8085
+      - 8443:8443
+  nginx:
+    container_name: local-gateway-nginx
+    build:
+      context: .
+      dockerfile: ./Dockerfiles/nginx.Dockerfile
+    ports:
+      - 82:82
+      - 443:443
+  config-server:
+    container_name: config-server
+    build: 
+      context: .
+      dockerfile: ./Dockerfiles/config-server.Dockerfile
+    ports: 
+      - 8888:8888
