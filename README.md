@@ -1,6 +1,10 @@
 # Local Docker Development Setup
 
-This repo is to quickly spin up your local development setup in a few simple commands using Docker
+This repo is to quickly spin up your local development setup in a few simple commands using Docker. Builds and starts up nginx, local-gateway, and config-server containers. 
+
+- https://github.com/MerrillCorporation/local-gateway
+- https://github.com/MerrillCorporation/config-server
+- https://github.com/MerrillCorporation/javelin-configurations
 
 ## How to run 
 
