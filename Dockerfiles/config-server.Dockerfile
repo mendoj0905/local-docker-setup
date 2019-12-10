@@ -17,7 +17,7 @@ RUN apt-get update && \
 RUN git clone git@github.com:MerrillCorporation/config-server.git
 RUN git clone git@github.com:MerrillCorporation/javelin-configurations.git
 
-FROM gradle:5.2.1-jdk8
+FROM gradle:5.2.1-jdk11-slim
 
 ENV CONFIG_REPO_PATH="/app/javelin-configurations"
 ENV ACTIVE_PCF_ENVIRONMENT="devb"
