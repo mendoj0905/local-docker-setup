@@ -15,11 +15,11 @@ RUN apt-get update && \
     chmod 600 /root/.ssh/id_rsa && \
     ssh-add ~/.ssh/id_rsa
 RUN git clone git@github.com:MerrillCorporation/config-server.git
-RUN git clone git@github.com:MerrillCorporation/javelin-configurations.git
+RUN git clone git@github.com:MerrillCorporation/ds1-configurations.git
 
 FROM gradle:5.2.1-jdk11-slim
 
-ENV CONFIG_REPO_PATH="/app/javelin-configurations"
+ENV CONFIG_REPO_PATH="/app/ds1-configurations"
 ENV ACTIVE_PCF_ENVIRONMENT="devb"
 ENV SPRING_PROFILES_ACTIVE="urls,events,dev,local"
 ENV TARGET_DOMAIN="apps.us2.devb.foundry.mrll.com"
