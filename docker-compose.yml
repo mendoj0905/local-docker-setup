@@ -26,12 +26,11 @@ services:
       - 8888:8888
   mongo:
     container_name: mongo
-    build: 
-      context: .
-      dockerfile: ./Dockerfiles/mongo.Dockerfile
+    image: mongo:bionic
     ports: 
       - 27017:27017
-  rabbit:
+  rabbit-mq:
+    container_name: rabbit-mq
     image: rabbitmq:3-management
     ports:
       - '5672:5672'
