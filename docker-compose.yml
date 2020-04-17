@@ -24,3 +24,14 @@ services:
       dockerfile: ./Dockerfiles/config-server.Dockerfile
     ports: 
       - 8888:8888
+  mongo:
+    container_name: mongo
+    image: mongo:bionic
+    ports: 
+      - 27017:27017
+  rabbit-mq:
+    container_name: rabbit-mq
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
