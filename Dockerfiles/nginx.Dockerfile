@@ -24,18 +24,18 @@ RUN mkdir -p /etc/nginx/ssl && \
     touch /etc/nginx/logs/error.log
 
 COPY --from=builder /app/local-gateway/src/main/nginx/local-nginx.conf  /etc/nginx/nginx.conf
-COPY --from=builder /app/local-gateway/src/main/nginx/local-web.core.merrillcorp.com.conf  /etc/nginx/servers/local-web.core.merrillcorp.com.conf
-COPY --from=builder /app/local-gateway/src/main/nginx/core.merrillcorp.com.crt  /etc/nginx/ssl/core.merrillcorp.com.crt
-COPY --from=builder /app/local-gateway/src/main/nginx/core.merrillcorp.com.key  /etc/nginx/ssl/core.merrillcorp.com.key
-COPY --from=builder /app/local-gateway/src/main/nginx/us2.merrillcorp.com.crt /etc/nginx/ssl/us2.merrillcorp.com.crt
-COPY --from=builder /app/local-gateway/src/main/nginx/us2.merrillcorp.com.key /etc/nginx/ssl/us2.merrillcorp.com.key
+COPY --from=builder /app/local-gateway/src/main/nginx/servers/local-web.dev.datasite.com.conf  /etc/nginx/servers/local-web.dev.datasite.com.conf
+COPY --from=builder /app/local-gateway/src/main/nginx/ssl/core.merrillcorp.com.crt  /etc/nginx/ssl/core.merrillcorp.com.crt
+COPY --from=builder /app/local-gateway/src/main/nginx/ssl/core.merrillcorp.com.key  /etc/nginx/ssl/core.merrillcorp.com.key
+COPY --from=builder /app/local-gateway/src/main/nginx/ssl/us2.merrillcorp.com.crt /etc/nginx/ssl/us2.merrillcorp.com.crt
+COPY --from=builder /app/local-gateway/src/main/nginx/ssl/us2.merrillcorp.com.key /etc/nginx/ssl/us2.merrillcorp.com.key
 COPY --from=builder /app/local-gateway/src/main/nginx/mime.types  /etc/nginx/mime.types
 
 # update nginx config to work with docker
-RUN sed -i "s|127\.0\.0\.1:8085|gateway:8085|g" /etc/nginx/servers/local-web.core.merrillcorp.com.conf
-RUN sed -i "s|127\.0\.0\.1|host.docker.internal|g" /etc/nginx/servers/local-web.core.merrillcorp.com.conf
+RUN sed -i "s|127\.0\.0\.1:8085|gateway:8085|g" /etc/nginx/servers/local-web.dev.datasite.com.conf
+RUN sed -i "s|127\.0\.0\.1|host.docker.internal|g" /etc/nginx/servers/local-web.dev.datasite.com.conf
 
-COPY --from=builder /app/local-gateway/src/main/nginx/50x.html /usr/local/var/www/50x.html
-COPY --from=builder /app/local-gateway/src/main/nginx/404.html /usr/local/var/www/404.htmldoc
+COPY --from=builder /app/local-gateway/src/main/nginx/www/50x.html /usr/local/var/www/50x.html
+COPY --from=builder /app/local-gateway/src/main/nginx/www/404.html /usr/local/var/www/404.htmldoc
 
 CMD [ "nginx", "-g", "daemon off;" ]

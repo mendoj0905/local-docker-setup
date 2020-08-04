@@ -26,6 +26,7 @@ ENV TARGET_DOMAIN="apps.us2.devb.foundry.mrll.com"
 ENV API_URL="http://localhost:8081"
 ENV TARGET_ENVIRONMENT="local"
 ENV TARGET_SERVICE="localhost:8200"
+ENV AUDIT_DATA_SERVICE="https://auditdata-capture-service.apps.us2.devb.foundry.mrll.com"
 
 USER root
 
