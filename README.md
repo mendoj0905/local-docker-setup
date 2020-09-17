@@ -11,10 +11,10 @@ This repo is to quickly spin up your local development setup in a few simple com
 1. Install Docker (https://docs.docker.com/install/)
 2. Setup ssh keys with github (https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
 3. Setup Environmental Variables 
+
 | Environment | Command  |
 | ----------- |----------|
 | Mac | export CONFIG_REPO_PATH=file:///Users/dkirber/dev/javelin/ds1-configurations<br/><br/> export ACTIVE_PCF_ENVIRONMENT=devb or devg or dev <br/><br/> export SPRING_PROFILES_ACTIVE=events,dev,local |
-
 
 ## Setup
 - Run script `./setup.sh`
