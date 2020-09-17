@@ -4,5 +4,6 @@ docker-compose down
 cd ..
 
 docker-compose down
+docker image prune
 
-# docker kill $(docker ps -q)
+rm -rf config-server ds1-configurations local-gateway

@@ -1,1 +1,6 @@
 id_rsa
+
+# Git clone folders
+/config-server
+/ds1-configurations
+/local-gateway
